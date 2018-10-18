@@ -12,10 +12,10 @@ namespace WinSnakeGame
 {
     public partial class Form1 : Form
     {
-        public event KeyPressEventHandler KeysPress;
         static string currentKey;
-        static int MovementAngle; //90,180,270,360
+        Random rand = new Random();
         static int x, y;
+        double distanceBetween;
         public Form1()
         {
             InitializeComponent();
@@ -25,11 +25,7 @@ namespace WinSnakeGame
 
 
 
-        private void Btn_start_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
            
@@ -37,9 +33,12 @@ namespace WinSnakeGame
 
         private void Update_Tick(object sender, EventArgs e)
         {
-            lbl_currentKeyPressCheck.Text = currentKey ;
+           
+            lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
+            AppleCheck();
+           // Death();
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -48,8 +47,8 @@ namespace WinSnakeGame
             currentKey =Convert.ToString( e.KeyChar).ToLower();
             if (currentKey == "a")
             {
-                x = -2;
-                y = 0;
+                x = -2; // direction
+                y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
@@ -66,6 +65,29 @@ namespace WinSnakeGame
                 x = +2;
                 y = 0;
             }
+        }
+        private void AppleCheck() // checks if player is close enough to apple 
+        {
+            distanceBetween =Math.Sqrt( (((pb_playerHead.Location.X - pb_apple.Location.X)^2)+((pb_playerHead.Location.Y-pb_apple.Location.Y)^2)));
+
+            if (distanceBetween < 50)
+            {
+                pb_apple.Left = rand.Next(2,798);
+                pb_apple.Top = rand.Next(2, 598);
+                GiveTail();
+            }
+        }
+
+        
+
+        private void Death()
+        {
+            
+        
+        }
+        private void GiveTail()//gives tail when apple is eaten
+        {
+
         }
     }
 }
