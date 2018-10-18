@@ -22,8 +22,8 @@ D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.exe.config
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.exe
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.pdb
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csprojResolveAssemblyReference.cache
-D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.Form1.resources
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.Properties.Resources.resources
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.GenerateResource.Cache
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.exe
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.pdb
+D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.frmWindow.resources

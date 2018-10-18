@@ -1,6 +1,6 @@
 ﻿namespace WinSnakeGame
 {
-    partial class Form1
+    partial class frmWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,8 @@
             this.lbl_xy1 = new System.Windows.Forms.Label();
             this.lbl_xy2 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
+            this.lblWinWidth = new System.Windows.Forms.Label();
+            this.lblWinHeight = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_apple)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +52,9 @@
             // 
             this.pb_playerHead.BackColor = System.Drawing.Color.Green;
             this.pb_playerHead.Location = new System.Drawing.Point(702, 500);
-            this.pb_playerHead.Margin = new System.Windows.Forms.Padding(6);
+            this.pb_playerHead.Margin = new System.Windows.Forms.Padding(0);
             this.pb_playerHead.Name = "pb_playerHead";
-            this.pb_playerHead.Size = new System.Drawing.Size(50, 48);
+            this.pb_playerHead.Size = new System.Drawing.Size(50, 50);
             this.pb_playerHead.TabIndex = 1;
             this.pb_playerHead.TabStop = false;
             // 
@@ -103,11 +105,31 @@
             this.lblScore.TabIndex = 7;
             this.lblScore.Text = "0";
             // 
-            // Form1
+            // lblWinWidth
+            // 
+            this.lblWinWidth.AutoSize = true;
+            this.lblWinWidth.Location = new System.Drawing.Point(626, 1015);
+            this.lblWinWidth.Name = "lblWinWidth";
+            this.lblWinWidth.Size = new System.Drawing.Size(70, 25);
+            this.lblWinWidth.TabIndex = 8;
+            this.lblWinWidth.Text = "label1";
+            // 
+            // lblWinHeight
+            // 
+            this.lblWinHeight.AutoSize = true;
+            this.lblWinHeight.Location = new System.Drawing.Point(697, 957);
+            this.lblWinHeight.Name = "lblWinHeight";
+            this.lblWinHeight.Size = new System.Drawing.Size(70, 25);
+            this.lblWinHeight.TabIndex = 9;
+            this.lblWinHeight.Text = "label1";
+            // 
+            // frmWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1568, 1079);
+            this.Controls.Add(this.lblWinHeight);
+            this.Controls.Add(this.lblWinWidth);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lbl_xy2);
             this.Controls.Add(this.lbl_xy1);
@@ -115,7 +137,7 @@
             this.Controls.Add(this.lbl_currentKeyPressCheck);
             this.Controls.Add(this.pb_playerHead);
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "Form1";
+            this.Name = "frmWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
@@ -134,6 +156,8 @@
         private System.Windows.Forms.Label lbl_xy1;
         private System.Windows.Forms.Label lbl_xy2;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblWinWidth;
+        private System.Windows.Forms.Label lblWinHeight;
     }
 }
 

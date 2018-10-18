@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WinSnakeGame
 {
-    public partial class Form1 : Form
+    public partial class frmWindow : Form
     {
         static string currentKey;
         Random rand = new Random();
@@ -18,26 +18,27 @@ namespace WinSnakeGame
         double distanceBetween;
         int score = 0, foodPoints = 10;
 
-
-        public Form1()
+        public frmWindow()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void Update_Tick(object sender, EventArgs e)
         {
             DisplayScore();
-            lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
+            lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
             lbl_xy1.Text = Convert.ToString(pb_playerHead.Location.X + "||" + pb_playerHead.Location.Y);
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
             AppleCheck();
-           // Death();
+            Death();
+            lblWinHeight.Text = Width.ToString() + " " + pb_playerHead.Right;
+            lblWinWidth.Text = Height.ToString() + " " + pb_playerHead.Height;
         }
 
         private void DisplayScore()
@@ -85,7 +86,28 @@ namespace WinSnakeGame
 
         private void Death()
         {
-            
+            //dying to edges
+            if(pb_playerHead.Location.X <= 1)
+            {
+                Update.Stop();
+            }
+
+            //I literally had to get to these numbers by dying over and over again. (trying to get the snake to die just as the edges hit the sides)
+            //Doing width minus the snake's width didn't work for some reason, for me anyway...
+            if (pb_playerHead.Location.X >= Width - 40)
+            {
+                Update.Stop();
+            }
+
+            if(pb_playerHead.Location.Y <= 1)
+            {
+                Update.Stop();
+            }
+
+            if (pb_playerHead.Location.Y >= Height - 70)
+            {
+                Update.Stop();
+            }
         
         }
         private void GiveTail()//gives tail when apple is eaten
