@@ -21,6 +21,12 @@ namespace WinSnakeGame
         static int counter, tailSpawnAreaX,tailSpawnAreaY;
         static double distanceBetween;
 
+        static int testingCounter=0;
+       
+
+       
+      
+
 
 
 
@@ -177,11 +183,18 @@ namespace WinSnakeGame
 
             if (score>= 20)
             {
-                for (int i = 1; i < pb_tail.Count(); ++i)
+               
+                if (testingCounter ==25)
                 {
-                    pb_tail[i].Left = pb_tail[i - 1].Location.X;
-                    pb_tail[i].Top = pb_tail[i - 1].Location.Y;
+                    for (int i = 1; i < pb_tail.Count(); ++i)
+                    {
+                        pb_tail[i].Left = pb_tail[i-1].Location.X;
+                        pb_tail[i].Top = pb_tail[i-1].Location.Y;
+                        testingCounter = 0;
+                    }
                 }
+                testingCounter++;
+               
             }
             
 
