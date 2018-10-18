@@ -18,3 +18,13 @@ C:\Users\Alex\Source\Repos\Snake-Game2\WinSnakeGame\WinSnakeGame\obj\Debug\WinSn
 C:\Users\Alex\Source\Repos\Snake-Game2\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Source\Repos\Snake-Game2\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.exe
 C:\Users\Alex\Source\Repos\Snake-Game2\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.pdb
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.exe.config
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.exe
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\bin\Debug\WinSnakeGame.pdb
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csprojResolveAssemblyReference.cache
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.Form1.resources
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.Properties.Resources.resources
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.GenerateResource.Cache
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.CoreCompileInputs.cache
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.exe
+D:\Repos\Snake-Game1\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.pdb

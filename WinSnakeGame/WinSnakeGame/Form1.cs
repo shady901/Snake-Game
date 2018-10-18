@@ -12,10 +12,15 @@ namespace WinSnakeGame
 {
     public partial class Form1 : Form
     {
+        
+        static PictureBox[] pb_tail = new PictureBox[1000];
         static string currentKey;
         Random rand = new Random();
-        static int x, y;
-        double distanceBetween;
+        static int x, y,tailCounter = 0;
+        static int counter, tailSpawnAreaX,tailSpawnAreaY;
+        static double distanceBetween;
+       static double score;
+       
         public Form1()
         {
             InitializeComponent();
@@ -35,10 +40,26 @@ namespace WinSnakeGame
         {
            
             lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
-            lbl_xy1.Text = Convert.ToString(pb_playerHead.Location.X+"||"+pb_playerHead.Location.Y);
+            if (score >=100)
+            {
+                lbl_xy1.Text = Convert.ToString(pb_tail[0].Location.X + "||" + pb_tail[0].Location.Y);
+
+            }
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
             AppleCheck();
+            lbl_score.Text = Convert.ToString("Score: " + score);
+            counter++;
+            if (counter ==25)
+            {
+                tailSpawnAreaX = pb_playerHead.Location.X;
+                tailSpawnAreaY = pb_playerHead.Location.Y;
+                counter = 0;
+                TailMovement();
+            }
+            
+
+
            // Death();
         }
 
@@ -75,11 +96,13 @@ namespace WinSnakeGame
             if (distanceBetween <4)
             {
                 pb_apple.Left = rand.Next(2,798);
-                pb_apple.Top = rand.Next(2, 598);
+                pb_apple.Top = rand.Next(2, 550);
+                score += 100;
                 GiveTail();
+                
             }
         }
-
+        
         
 
         private void Death()
@@ -89,12 +112,42 @@ namespace WinSnakeGame
         }
         private void GiveTail()//gives tail when apple is eaten
         {
-            PictureBox pb_tail = new PictureBox();
-            pb_tail.Height = 20;
-            pb_tail.Width = 20;
           
-            pb_tail.BackColor = Color.Green;
+            pb_tail[tailCounter] = new PictureBox
+            {
+                Height = 18,
+                Width = 18,
+                BackColor = Color.Green,
+                Left = tailSpawnAreaX,
+                Top = tailSpawnAreaY,
+                Visible = true,
+
+
+            };
+
+            this.Controls.Add(pb_tail[tailCounter]);
+
+            tailCounter+=1;
+        }
+        private void TailMovement()
+        {
+            if (score >=100)
+            {
+                pb_tail[0].Left = tailSpawnAreaX;
+                pb_tail[0].Top = tailSpawnAreaY;
+            }
+
+            if (score>= 200)
+            {
+                for (int i = 1; i < pb_tail.Count(); i++)
+                {
+                    pb_tail[i].Left = pb_tail[i - 1].Location.X;
+                    pb_tail[i].Top = pb_tail[i - 1].Location.Y;
+                }
+            }
+            
 
         }
+
     }
 }

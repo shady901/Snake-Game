@@ -35,6 +35,7 @@
             this.pb_apple = new System.Windows.Forms.PictureBox();
             this.lbl_xy1 = new System.Windows.Forms.Label();
             this.lbl_xy2 = new System.Windows.Forms.Label();
+            this.lbl_score = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_apple)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.pb_playerHead.BackColor = System.Drawing.Color.Green;
             this.pb_playerHead.Location = new System.Drawing.Point(351, 260);
             this.pb_playerHead.Name = "pb_playerHead";
-            this.pb_playerHead.Size = new System.Drawing.Size(25, 25);
+            this.pb_playerHead.Size = new System.Drawing.Size(20, 20);
             this.pb_playerHead.TabIndex = 1;
             this.pb_playerHead.TabStop = false;
             // 
@@ -87,16 +88,29 @@
             this.lbl_xy2.Size = new System.Drawing.Size(0, 13);
             this.lbl_xy2.TabIndex = 6;
             // 
+            // lbl_score
+            // 
+            this.lbl_score.AutoSize = true;
+            this.lbl_score.Location = new System.Drawing.Point(590, 13);
+            this.lbl_score.Name = "lbl_score";
+            this.lbl_score.Size = new System.Drawing.Size(0, 13);
+            this.lbl_score.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lbl_score);
             this.Controls.Add(this.lbl_xy2);
             this.Controls.Add(this.lbl_xy1);
             this.Controls.Add(this.pb_apple);
             this.Controls.Add(this.lbl_currentKeyPressCheck);
             this.Controls.Add(this.pb_playerHead);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -115,6 +129,7 @@
         private System.Windows.Forms.PictureBox pb_apple;
         private System.Windows.Forms.Label lbl_xy1;
         private System.Windows.Forms.Label lbl_xy2;
+        private System.Windows.Forms.Label lbl_score;
     }
 }
 
