@@ -20,13 +20,10 @@ namespace WinSnakeGame
         double distanceBetween;
         int score = 0, foodPoints = 10;
 
-        public frmWindow()
-        static int x, y,tailCounter = 0;
-        static int counter, tailSpawnAreaX,tailSpawnAreaY;
-        static double distanceBetween;
-      
+        static int tailCounter = 0;
+        static int counter, tailSpawnAreaX,tailSpawnAreaY;      
        
-        public Form1()
+        public frmWindow()
         {
             InitializeComponent();
         }
@@ -51,7 +48,7 @@ namespace WinSnakeGame
             Death();
             lblWinHeight.Text = Width.ToString() + " " + pb_playerHead.Right;
             lblWinWidth.Text = Height.ToString() + " " + pb_playerHead.Height;
-            lbl_score.Text = Convert.ToString("Score: " + score);
+            //lbl_score.Text = Convert.ToString("Score: " + score);
             counter++;
             if (counter ==25)
             {
@@ -63,7 +60,7 @@ namespace WinSnakeGame
             
 
 
-           // Death();
+            Death();
         }
 
         private void DisplayScore()
