@@ -184,16 +184,18 @@ namespace WinSnakeGame
 
             if (score>= 20)
             {
-                //for (int i = 1; i < pb_tail.Count(); ++i)
-                // {
+               
                 if (testingCounter ==25)
                 {
-                    pb_tail[1].Left = pb_tail[0].Location.X;
-                    pb_tail[1].Top = pb_tail[0].Location.Y;
-                    testingCounter = 0;
+                    for (int i = 1; i < pb_tail.Count(); ++i)
+                    {
+                        pb_tail[i].Left = pb_tail[i-1].Location.X;
+                        pb_tail[i].Top = pb_tail[i-1].Location.Y;
+                        testingCounter = 0;
+                    }
                 }
                 testingCounter++;
-                // }
+               
             }
             
 
