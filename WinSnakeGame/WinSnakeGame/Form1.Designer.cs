@@ -33,6 +33,8 @@
             this.pb_playerHead = new System.Windows.Forms.PictureBox();
             this.lbl_currentKeyPressCheck = new System.Windows.Forms.Label();
             this.pb_apple = new System.Windows.Forms.PictureBox();
+            this.lbl_xy1 = new System.Windows.Forms.Label();
+            this.lbl_xy2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_apple)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +42,7 @@
             // Update
             // 
             this.Update.Enabled = true;
+            this.Update.Interval = 1;
             this.Update.Tick += new System.EventHandler(this.Update_Tick);
             // 
             // pb_playerHead
@@ -68,11 +71,29 @@
             this.pb_apple.TabIndex = 4;
             this.pb_apple.TabStop = false;
             // 
+            // lbl_xy1
+            // 
+            this.lbl_xy1.AutoSize = true;
+            this.lbl_xy1.Location = new System.Drawing.Point(227, 36);
+            this.lbl_xy1.Name = "lbl_xy1";
+            this.lbl_xy1.Size = new System.Drawing.Size(0, 13);
+            this.lbl_xy1.TabIndex = 5;
+            // 
+            // lbl_xy2
+            // 
+            this.lbl_xy2.AutoSize = true;
+            this.lbl_xy2.Location = new System.Drawing.Point(505, 36);
+            this.lbl_xy2.Name = "lbl_xy2";
+            this.lbl_xy2.Size = new System.Drawing.Size(0, 13);
+            this.lbl_xy2.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lbl_xy2);
+            this.Controls.Add(this.lbl_xy1);
             this.Controls.Add(this.pb_apple);
             this.Controls.Add(this.lbl_currentKeyPressCheck);
             this.Controls.Add(this.pb_playerHead);
@@ -92,6 +113,8 @@
         private System.Windows.Forms.PictureBox pb_playerHead;
         private System.Windows.Forms.Label lbl_currentKeyPressCheck;
         private System.Windows.Forms.PictureBox pb_apple;
+        private System.Windows.Forms.Label lbl_xy1;
+        private System.Windows.Forms.Label lbl_xy2;
     }
 }
 
