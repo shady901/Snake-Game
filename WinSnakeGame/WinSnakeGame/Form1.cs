@@ -12,71 +12,68 @@ namespace WinSnakeGame
 {
     public partial class frmWindow : Form
     {
-        
+
         static PictureBox[] pb_tail = new PictureBox[1000];
         static string currentKey;
         Random rand = new Random();
 
-        static int x, y,tailCounter = 0;
-        static int counter, tailSpawnAreaX,tailSpawnAreaY;
+        static int x, y, tailCounter = 0;
+        static int counter, tailSpawnAreaX, tailSpawnAreaY;
         static double distanceBetween;
 
-        static int testingCounter=0;
-       
-
-       
-      
+        static int testingCounter = 0;
+        static int newTailPieceAdded = 1;
 
 
 
 
 
-        int score = 0, foodPoints = 10, speed = 20/2;
 
+
+
+        int score = 0, foodPoints = 10;
+        double speed = 1;
         public frmWindow()
 
         {
             InitializeComponent();
+            AddTailPiece(pb_playerHead.Left, pb_playerHead.Top);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
 
         private void Update_Tick(object sender, EventArgs e)
         {
 
-           
-            lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
-            if (score >=10)
-            {
-                lbl_xy1.Text = Convert.ToString(pb_tail[0].Location.X + "||" + pb_tail[0].Location.Y);
 
-            }
+            lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
+            lbl_xy1.Text = Convert.ToString(pb_tail[0].Location.X + "||" + pb_tail[0].Location.Y);
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
+
             AppleCheck();
-           
+
             counter++;
-            if (counter ==15)
+            if (counter == 5)
             {
+
                 tailSpawnAreaX = pb_playerHead.Location.X;
                 tailSpawnAreaY = pb_playerHead.Location.Y;
                 counter = 0;
-                
+
             }
             TailMovement();
-
-
 
 
             DisplayScore();
             lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
             lbl_xy1.Text = Convert.ToString(pb_playerHead.Location.X + "||" + pb_playerHead.Location.Y);
-            pb_playerHead.Left += x;
-            pb_playerHead.Top += y;
-            AppleCheck();
-           // Death();
+           
+            //AppleCheck();
+            // Death();
             lblWinHeight.Text = Width.ToString() + " " + pb_playerHead.Right;
             lblWinWidth.Text = Height.ToString() + " " + pb_playerHead.Height;
         }
@@ -92,22 +89,22 @@ namespace WinSnakeGame
             currentKey = Convert.ToString(e.KeyChar).ToLower();
             if (currentKey == "a") //using wasd for movement due to arrow keys not working as intended
             {
-                x = -speed; // direction
+                x =Convert.ToInt32( -speed); // direction
                 y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
                 x = 0;
-                y = -speed;
+                y = Convert.ToInt32(-speed);
             }
             if (currentKey == "s")
             {
                 x = 0;
-                y = +speed;
+                y = Convert.ToInt32(+speed);
             }
             if (currentKey == "d")
             {
-                x = +speed;
+                x = Convert.ToInt32(+speed);
                 y = 0;
             }
         }
@@ -121,17 +118,17 @@ namespace WinSnakeGame
                 pb_apple.Left = rand.Next(2, 798);
                 pb_apple.Top = rand.Next(2, 550);
                 score += foodPoints;
-                speed += 1/2;
+                speed +=1/2;
                 GiveTail();
-                
+
             }
-         }
-        
+        }
+
 
         private void Death()
         {
             //dying to edges
-            if(pb_playerHead.Location.X <= 1)
+            if (pb_playerHead.Location.X <= 1)
             {
                 Update.Stop();
             }
@@ -143,7 +140,7 @@ namespace WinSnakeGame
                 Update.Stop();
             }
 
-            if(pb_playerHead.Location.Y <= 1)
+            if (pb_playerHead.Location.Y <= 1)
             {
                 Update.Stop();
             }
@@ -152,51 +149,62 @@ namespace WinSnakeGame
             {
                 Update.Stop();
             }
-        
+
         }
         private void GiveTail()//gives tail when apple is eaten
         {
-          
-            pb_tail[tailCounter] = new PictureBox
-            {
-                Height = 18,
-                Width = 18,
-                BackColor = Color.Green,
-                Left = tailSpawnAreaX,
-                Top = tailSpawnAreaY,
-               
+            newTailPieceAdded++;
 
-
-            };
-
-            this.Controls.Add(pb_tail[tailCounter]);
-
-            tailCounter+=1;
         }
+        private void AddTailPiece(int X, int Y)
+        {
+            if (newTailPieceAdded > 0)
+            {
+                pb_tail[tailCounter] = new PictureBox
+                {
+                    Height = 18,
+                    Width = 18,
+                    BackColor = Color.Green,
+                    Left = X,
+                    Top = Y
+                };
+
+                this.Controls.Add(pb_tail[tailCounter]);
+                newTailPieceAdded--;
+                tailCounter += 1;
+            }
+        }
+
         private void TailMovement()
         {
-            if (score >=10)
-            {
-                pb_tail[0].Left = tailSpawnAreaX;
-                pb_tail[0].Top = tailSpawnAreaY;
-            }
 
-            if (score>= 20)
+            if (testingCounter == 10)
             {
-               
-                if (testingCounter ==25)
+                int oldX = 0;
+                int oldY = 0;
+                int newX = tailSpawnAreaX;
+                int newY = tailSpawnAreaY;
+
+                for (int i = 0; i < tailCounter; ++i)
                 {
-                    for (int i = 1; i < pb_tail.Count(); ++i)
-                    {
-                        pb_tail[i].Left = pb_tail[i-1].Location.X;
-                        pb_tail[i].Top = pb_tail[i-1].Location.Y;
-                        testingCounter = 0;
-                    }
+                    // Store old XY so you can use them for the next piece
+                    oldX = pb_tail[i].Left;
+                    oldY = pb_tail[i].Top;
+
+                    // Set tail piece at new XY
+                    pb_tail[i].Left = newX;
+                    pb_tail[i].Top = newY;
+
+                    // Set New XY = old XY
+                    newX = oldX;
+                    newY = oldY;
+
                 }
-                testingCounter++;
-               
+                AddTailPiece(newX, newY); // Will add a new piece if needed
+                testingCounter = 0;
             }
-            
+            testingCounter++;
+
 
         }
 
