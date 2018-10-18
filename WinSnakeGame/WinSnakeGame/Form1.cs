@@ -70,7 +70,7 @@ namespace WinSnakeGame
         }
         private void AppleCheck() // checks if player is close enough to apple 
         {
-            distanceBetween = Math.Sqrt((Math.Abs(((pb_playerHead.Location.X - pb_apple.Location.X)^2))+Math.Abs(((pb_playerHead.Location.Y - pb_apple.Location.Y)^2)))); 
+            distanceBetween = Math.Sqrt((Math.Abs(((pb_playerHead.Location.X - pb_apple.Location.X) ^ 2)) + Math.Abs(((pb_playerHead.Location.Y - pb_apple.Location.Y) ^ 2))));
         
             if (distanceBetween <4)
             {
