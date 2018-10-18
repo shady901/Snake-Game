@@ -25,7 +25,7 @@ namespace WinSnakeGame
 
 
 
-        int score = 0, foodPoints = 10, speed = 1;
+        int score = 0, foodPoints = 10, speed = 20/2;
 
         public frmWindow()
 
@@ -35,7 +35,6 @@ namespace WinSnakeGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void Update_Tick(object sender, EventArgs e)

@@ -45,13 +45,12 @@
             // Update
             // 
             this.Update.Enabled = true;
-            this.Update.Interval = 1;
             this.Update.Tick += new System.EventHandler(this.Update_Tick);
             // 
             // pb_playerHead
             // 
             this.pb_playerHead.BackColor = System.Drawing.Color.Green;
-            this.pb_playerHead.Location = new System.Drawing.Point(351, 260);
+            this.pb_playerHead.Location = new System.Drawing.Point(800, 460);
             this.pb_playerHead.Margin = new System.Windows.Forms.Padding(0);
             this.pb_playerHead.Name = "pb_playerHead";
             this.pb_playerHead.Size = new System.Drawing.Size(20, 20);
@@ -61,72 +60,76 @@
             // lbl_currentKeyPressCheck
             // 
             this.lbl_currentKeyPressCheck.AutoSize = true;
-            this.lbl_currentKeyPressCheck.Location = new System.Drawing.Point(348, 9);
+            this.lbl_currentKeyPressCheck.Location = new System.Drawing.Point(696, 17);
+            this.lbl_currentKeyPressCheck.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_currentKeyPressCheck.Name = "lbl_currentKeyPressCheck";
-            this.lbl_currentKeyPressCheck.Size = new System.Drawing.Size(0, 13);
+            this.lbl_currentKeyPressCheck.Size = new System.Drawing.Size(0, 25);
             this.lbl_currentKeyPressCheck.TabIndex = 2;
             // 
             // pb_apple
             // 
             this.pb_apple.BackColor = System.Drawing.Color.Red;
-            this.pb_apple.Location = new System.Drawing.Point(252, 147);
+            this.pb_apple.Location = new System.Drawing.Point(800, 420);
+            this.pb_apple.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pb_apple.Name = "pb_apple";
-            this.pb_apple.Size = new System.Drawing.Size(15, 15);
+            this.pb_apple.Size = new System.Drawing.Size(20, 20);
             this.pb_apple.TabIndex = 4;
             this.pb_apple.TabStop = false;
             // 
             // lbl_xy1
             // 
             this.lbl_xy1.AutoSize = true;
-            this.lbl_xy1.Location = new System.Drawing.Point(227, 36);
+            this.lbl_xy1.Location = new System.Drawing.Point(454, 69);
+            this.lbl_xy1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_xy1.Name = "lbl_xy1";
-            this.lbl_xy1.Size = new System.Drawing.Size(0, 13);
+            this.lbl_xy1.Size = new System.Drawing.Size(0, 25);
             this.lbl_xy1.TabIndex = 5;
             // 
             // lbl_xy2
             // 
             this.lbl_xy2.AutoSize = true;
-            this.lbl_xy2.Location = new System.Drawing.Point(505, 36);
+            this.lbl_xy2.Location = new System.Drawing.Point(1010, 69);
+            this.lbl_xy2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_xy2.Name = "lbl_xy2";
-            this.lbl_xy2.Size = new System.Drawing.Size(0, 13);
+            this.lbl_xy2.Size = new System.Drawing.Size(0, 25);
             this.lbl_xy2.TabIndex = 6;
             // 
             // lbl_Score
             // 
             this.lbl_Score.AutoSize = true;
             this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_Score.Location = new System.Drawing.Point(667, 18);
-            this.lbl_Score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Score.Location = new System.Drawing.Point(1334, 35);
+            this.lbl_Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Score.Name = "lbl_Score";
-            this.lbl_Score.Size = new System.Drawing.Size(18, 20);
+            this.lbl_Score.Size = new System.Drawing.Size(35, 37);
             this.lbl_Score.TabIndex = 7;
             this.lbl_Score.Text = "0";
             // 
             // lblWinWidth
             // 
             this.lblWinWidth.AutoSize = true;
-            this.lblWinWidth.Location = new System.Drawing.Point(611, 518);
-            this.lblWinWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWinWidth.Location = new System.Drawing.Point(1222, 996);
+            this.lblWinWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWinWidth.Name = "lblWinWidth";
-            this.lblWinWidth.Size = new System.Drawing.Size(35, 13);
+            this.lblWinWidth.Size = new System.Drawing.Size(70, 25);
             this.lblWinWidth.TabIndex = 8;
             this.lblWinWidth.Text = "label1";
             // 
             // lblWinHeight
             // 
             this.lblWinHeight.AutoSize = true;
-            this.lblWinHeight.Location = new System.Drawing.Point(650, 518);
-            this.lblWinHeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWinHeight.Location = new System.Drawing.Point(1300, 996);
+            this.lblWinHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWinHeight.Name = "lblWinHeight";
-            this.lblWinHeight.Size = new System.Drawing.Size(35, 13);
+            this.lblWinHeight.Size = new System.Drawing.Size(70, 25);
             this.lblWinHeight.TabIndex = 9;
             this.lblWinHeight.Text = "label1";
             // 
             // frmWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1574, 849);
             this.Controls.Add(this.lblWinHeight);
             this.Controls.Add(this.lblWinWidth);
             this.Controls.Add(this.lbl_Score);
@@ -135,10 +138,11 @@
             this.Controls.Add(this.pb_apple);
             this.Controls.Add(this.lbl_currentKeyPressCheck);
             this.Controls.Add(this.pb_playerHead);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MaximumSize = new System.Drawing.Size(1600, 920);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(1600, 920);
             this.Name = "frmWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
