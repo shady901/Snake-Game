@@ -16,14 +16,19 @@ namespace WinSnakeGame
         static PictureBox[] pb_tail = new PictureBox[1000];
         static string currentKey;
         Random rand = new Random();
-        static int x, y;
-        double distanceBetween;
+
+        static int x, y,tailCounter = 0;
+        static int counter, tailSpawnAreaX,tailSpawnAreaY;
+        static double distanceBetween;
+      
+       
+       
+
+       
         int score = 0, foodPoints = 10;
 
-        static int tailCounter = 0;
-        static int counter, tailSpawnAreaX,tailSpawnAreaY;      
-       
         public frmWindow()
+
         {
             InitializeComponent();
         }
@@ -35,9 +40,10 @@ namespace WinSnakeGame
 
         private void Update_Tick(object sender, EventArgs e)
         {
-            DisplayScore();
-            lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
-            if (score >= 100)
+
+           
+            lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
+            if (score >=10)
             {
                 lbl_xy1.Text = Convert.ToString(pb_tail[0].Location.X + "||" + pb_tail[0].Location.Y);
 
@@ -45,27 +51,34 @@ namespace WinSnakeGame
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
             AppleCheck();
-            Death();
-            lblWinHeight.Text = Width.ToString() + " " + pb_playerHead.Right;
-            lblWinWidth.Text = Height.ToString() + " " + pb_playerHead.Height;
-            //lbl_score.Text = Convert.ToString("Score: " + score);
+           
             counter++;
-            if (counter ==25)
+            if (counter ==15)
             {
                 tailSpawnAreaX = pb_playerHead.Location.X;
                 tailSpawnAreaY = pb_playerHead.Location.Y;
                 counter = 0;
-                TailMovement();
+                
             }
-            
+            TailMovement();
 
 
-            Death();
+
+
+            DisplayScore();
+            lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
+            lbl_xy1.Text = Convert.ToString(pb_playerHead.Location.X + "||" + pb_playerHead.Location.Y);
+            pb_playerHead.Left += x;
+            pb_playerHead.Top += y;
+            AppleCheck();
+           // Death();
+            lblWinHeight.Text = Width.ToString() + " " + pb_playerHead.Right;
+            lblWinWidth.Text = Height.ToString() + " " + pb_playerHead.Height;
         }
 
         private void DisplayScore()
         {
-            lblScore.Text = score.ToString();
+            lbl_Score.Text = score.ToString();
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,22 +87,22 @@ namespace WinSnakeGame
             currentKey = Convert.ToString(e.KeyChar).ToLower();
             if (currentKey == "a") //using wasd for movement due to arrow keys not working as intended
             {
-                x = -5; // direction
+                x = -1; // direction
                 y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
                 x = 0;
-                y = -5;
+                y = -1;
             }
             if (currentKey == "s")
             {
                 x = 0;
-                y = +5;
+                y = +1;
             }
             if (currentKey == "d")
             {
-                x = +5;
+                x = +1;
                 y = 0;
             }
         }
@@ -99,13 +112,15 @@ namespace WinSnakeGame
 
             if (distanceBetween < 4)
             {
-                pb_apple.Left = rand.Next(2,798);
+
+                pb_apple.Left = rand.Next(2, 798);
                 pb_apple.Top = rand.Next(2, 550);
-               
-                GiveTail();
                 score += foodPoints;
+                GiveTail();
+                
             }
-        }
+         }
+        
 
         private void Death()
         {
@@ -143,7 +158,7 @@ namespace WinSnakeGame
                 BackColor = Color.Green,
                 Left = tailSpawnAreaX,
                 Top = tailSpawnAreaY,
-                Visible = true,
+               
 
 
             };
@@ -154,15 +169,15 @@ namespace WinSnakeGame
         }
         private void TailMovement()
         {
-            if (score >=100)
+            if (score >=10)
             {
                 pb_tail[0].Left = tailSpawnAreaX;
                 pb_tail[0].Top = tailSpawnAreaY;
             }
 
-            if (score>= 200)
+            if (score>= 20)
             {
-                for (int i = 1; i < pb_tail.Count(); i++)
+                for (int i = 1; i < pb_tail.Count(); ++i)
                 {
                     pb_tail[i].Left = pb_tail[i - 1].Location.X;
                     pb_tail[i].Top = pb_tail[i - 1].Location.Y;
