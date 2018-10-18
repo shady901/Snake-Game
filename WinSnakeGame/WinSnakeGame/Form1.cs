@@ -48,33 +48,32 @@ namespace WinSnakeGame
             currentKey = Convert.ToString(e.KeyChar).ToLower();
             if (currentKey == "a") //using wasd for movement due to arrow keys not working as intended
             {
-                x = -1; // direction
+                x = -5; // direction
                 y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
                 x = 0;
-                y = -1;
+                y = -5;
             }
             if (currentKey == "s")
             {
                 x = 0;
-                y = +1;
+                y = +5;
             }
             if (currentKey == "d")
             {
-                x = +1;
+                x = +5;
                 y = 0;
             }
-            
         }
         private void AppleCheck() // checks if player is close enough to apple 
         {
             distanceBetween = Math.Sqrt((Math.Abs(((pb_playerHead.Location.X - pb_apple.Location.X) ^ 2)) + Math.Abs(((pb_playerHead.Location.Y - pb_apple.Location.Y) ^ 2))));
-        
-            if (distanceBetween <4)
+
+            if (distanceBetween < 4)
             {
-                pb_apple.Left = rand.Next(2,798);
+                pb_apple.Left = rand.Next(2, 798);
                 pb_apple.Top = rand.Next(2, 598);
                 GiveTail();
             }
