@@ -25,7 +25,13 @@ namespace WinSnakeGame
        
 
        
-        int score = 0, foodPoints = 10;
+      
+
+
+
+
+
+        int score = 0, foodPoints = 10, speed = 1;
 
         public frmWindow()
 
@@ -87,22 +93,22 @@ namespace WinSnakeGame
             currentKey = Convert.ToString(e.KeyChar).ToLower();
             if (currentKey == "a") //using wasd for movement due to arrow keys not working as intended
             {
-                x = -1; // direction
+                x = -speed; // direction
                 y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
                 x = 0;
-                y = -1;
+                y = -speed;
             }
             if (currentKey == "s")
             {
                 x = 0;
-                y = +1;
+                y = +speed;
             }
             if (currentKey == "d")
             {
-                x = +1;
+                x = +speed;
                 y = 0;
             }
         }
@@ -113,9 +119,10 @@ namespace WinSnakeGame
             if (distanceBetween < 4)
             {
 
-                pb_apple.Left = rand.Next(2,798);
+                pb_apple.Left = rand.Next(2, 798);
                 pb_apple.Top = rand.Next(2, 550);
                 score += foodPoints;
+                speed += 1/2;
                 GiveTail();
                 
             }

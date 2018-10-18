@@ -27,4 +27,3 @@ D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.Gene
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.exe
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.pdb
 D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.frmWindow.resources
-D:\Repos\Snake-Game\WinSnakeGame\WinSnakeGame\obj\Debug\WinSnakeGame.csproj.CoreCompileInputs.cache
