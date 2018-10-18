@@ -47,22 +47,22 @@ namespace WinSnakeGame
             currentKey =Convert.ToString( e.KeyChar).ToLower();
             if (currentKey == "a")
             {
-                x = -2; // direction
+                x = -5; // direction
                 y = 0; // stops angled direction 
             }
             if (currentKey == "w")
             {
                 x = 0;
-                y = -2;
+                y = -5;
             }
             if (currentKey == "s")
             {
                 x = 0;
-                y = +2;
+                y = +5;
             }
             if (currentKey == "d")
             {
-                x = +2;
+                x = +5;
                 y = 0;
             }
         }
