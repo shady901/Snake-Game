@@ -16,16 +16,12 @@ namespace WinSnakeGame
         Random rand = new Random();
         static int x, y;
         double distanceBetween;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-
-
-
-
-        
         private void Form1_Load(object sender, EventArgs e)
         {
            
@@ -33,8 +29,8 @@ namespace WinSnakeGame
 
         private void Update_Tick(object sender, EventArgs e)
         {
-           
-            lbl_currentKeyPressCheck.Text =Convert.ToString( distanceBetween) ;
+
+            lbl_currentKeyPressCheck.Text = Convert.ToString(distanceBetween);
             pb_playerHead.Left += x;
             pb_playerHead.Top += y;
             AppleCheck();
@@ -44,7 +40,7 @@ namespace WinSnakeGame
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            currentKey =Convert.ToString( e.KeyChar).ToLower();
+            currentKey = Convert.ToString(e.KeyChar).ToLower();
             if (currentKey == "a")
             {
                 x = -5; // direction
@@ -68,7 +64,7 @@ namespace WinSnakeGame
         }
         private void AppleCheck() // checks if player is close enough to apple 
         {
-            distanceBetween =Math.Sqrt( (((pb_playerHead.Location.X - pb_apple.Location.X)^2)+((pb_playerHead.Location.Y-pb_apple.Location.Y)^2)));
+            distanceBetween = Math.Sqrt((((pb_playerHead.Location.X - pb_apple.Location.X) ^ 2) + ((pb_playerHead.Location.Y - pb_apple.Location.Y) ^ 2)));
 
             if (distanceBetween < 50)
             {
